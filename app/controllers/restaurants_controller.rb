@@ -27,18 +27,16 @@ class RestaurantsController < ApplicationController
   end
 
   def update
-      if @restaurant.update(restaurant_params)
-        redirect_to @restaurant, notice: 'Restaurant was successfully updated.'
-      else
-        render :edit
-      end
+    if @restaurant.update(restaurant_params)
+      redirect_to @restaurant, notice: 'Restaurant was successfully updated.'
+    else
+      render :edit
     end
   end
 
   def destroy
     @restaurant.destroy
-      redirect_to restaurants_url, notice: 'Restaurant was successfully destroyed.'
-    end
+    redirect_to restaurants_url, notice: 'Restaurant was successfully destroyed.'
   end
 
   private
